@@ -1,0 +1,153 @@
+ERROR - 2024-06-09 11:39:47 --> mysqli_sql_exception: Duplicate entry '123123' for key 'cl_documento' in /home/app/public_html/panstock/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /home/app/public_html/panstock/system/Database/MySQLi/Connection.php(295): mysqli->query('UPDATE `cliente...', 0)
+#1 /home/app/public_html/panstock/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `cliente...')
+#2 /home/app/public_html/panstock/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `cliente...')
+#3 /home/app/public_html/panstock/system/Database/BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `cliente...', Array, false)
+#4 /home/app/public_html/panstock/system/Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/app/public_html/panstock/system/BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 /home/app/public_html/panstock/system/Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 /home/app/public_html/panstock/app/Controllers/Clientes.php(208): CodeIgniter\Model->update('7', Array)
+#8 /home/app/public_html/panstock/system/CodeIgniter.php(934): App\Controllers\Clientes->update('7')
+#9 /home/app/public_html/panstock/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+#10 /home/app/public_html/panstock/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/app/public_html/panstock/index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-09 11:39:47 --> Duplicate entry '123123' for key 'cl_documento'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('UPDATE `clientes` SET `cl_nombre` = \'Biton\', `cl_apellido` = \'Díaz\', `cl_documento` = \'123123\', `td_id` = \'6\', `cl_telefono` = \'777777777\', `cl_email` = \'esasdaa@example.com\'
+WHERE `clientes`.`cl_id` IN (\'7\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `clientes` SET `cl_nombre` = \'Biton\', `cl_apellido` = \'Díaz\', `cl_documento` = \'123123\', `td_id` = \'6\', `cl_telefono` = \'777777777\', `cl_email` = \'esasdaa@example.com\'
+WHERE `clientes`.`cl_id` IN (\'7\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `clientes` SET `cl_nombre` = \'Biton\', `cl_apellido` = \'Díaz\', `cl_documento` = \'123123\', `td_id` = \'6\', `cl_telefono` = \'777777777\', `cl_email` = \'esasdaa@example.com\'
+WHERE `clientes`.`cl_id` IN (\'7\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `clientes` SET `cl_nombre` = :cl_nombre:, `cl_apellido` = :cl_apellido:, `cl_documento` = :cl_documento:, `td_id` = :td_id:, `cl_telefono` = :cl_telefono:, `cl_email` = :cl_email:
+WHERE `clientes`.`cl_id` IN :clientes.cl_id:', [...], false)
+ 5 SYSTEMPATH/Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH/BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH/Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH/Controllers/Clientes.php(208): CodeIgniter\Model->update('7', [...])
+ 9 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Clientes->update('7')
+10 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+11 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-09 11:40:04 --> mysqli_sql_exception: Duplicate entry 'esasdaa@example.com' for key 'cl_email' in /home/app/public_html/panstock/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /home/app/public_html/panstock/system/Database/MySQLi/Connection.php(295): mysqli->query('UPDATE `cliente...', 0)
+#1 /home/app/public_html/panstock/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `cliente...')
+#2 /home/app/public_html/panstock/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `cliente...')
+#3 /home/app/public_html/panstock/system/Database/BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `cliente...', Array, false)
+#4 /home/app/public_html/panstock/system/Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+#5 /home/app/public_html/panstock/system/BaseModel.php(943): CodeIgniter\Model->doUpdate(Array, Array)
+#6 /home/app/public_html/panstock/system/Model.php(756): CodeIgniter\BaseModel->update(Array, Array)
+#7 /home/app/public_html/panstock/app/Controllers/Clientes.php(208): CodeIgniter\Model->update('7', Array)
+#8 /home/app/public_html/panstock/system/CodeIgniter.php(934): App\Controllers\Clientes->update('7')
+#9 /home/app/public_html/panstock/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+#10 /home/app/public_html/panstock/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/app/public_html/panstock/index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-09 11:40:04 --> Duplicate entry 'esasdaa@example.com' for key 'cl_email'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('UPDATE `clientes` SET `cl_nombre` = \'Biton\', `cl_apellido` = \'Díaz\', `cl_documento` = \'85654\', `td_id` = \'6\', `cl_telefono` = \'777777777\', `cl_email` = \'esasdaa@example.com\'
+WHERE `clientes`.`cl_id` IN (\'7\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `clientes` SET `cl_nombre` = \'Biton\', `cl_apellido` = \'Díaz\', `cl_documento` = \'85654\', `td_id` = \'6\', `cl_telefono` = \'777777777\', `cl_email` = \'esasdaa@example.com\'
+WHERE `clientes`.`cl_id` IN (\'7\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `clientes` SET `cl_nombre` = \'Biton\', `cl_apellido` = \'Díaz\', `cl_documento` = \'85654\', `td_id` = \'6\', `cl_telefono` = \'777777777\', `cl_email` = \'esasdaa@example.com\'
+WHERE `clientes`.`cl_id` IN (\'7\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2476): CodeIgniter\Database\BaseConnection->query('UPDATE `clientes` SET `cl_nombre` = :cl_nombre:, `cl_apellido` = :cl_apellido:, `cl_documento` = :cl_documento:, `td_id` = :td_id:, `cl_telefono` = :cl_telefono:, `cl_email` = :cl_email:
+WHERE `clientes`.`cl_id` IN :clientes.cl_id:', [...], false)
+ 5 SYSTEMPATH/Model.php(396): CodeIgniter\Database\BaseBuilder->update()
+ 6 SYSTEMPATH/BaseModel.php(943): CodeIgniter\Model->doUpdate([...], [...])
+ 7 SYSTEMPATH/Model.php(756): CodeIgniter\BaseModel->update([...], [...])
+ 8 APPPATH/Controllers/Clientes.php(208): CodeIgniter\Model->update('7', [...])
+ 9 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Clientes->update('7')
+10 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+11 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-09 21:23:22 --> mysqli_sql_exception: Duplicate entry 'marco@example.com' for key 'cl_email' in /home/app/public_html/panstock/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /home/app/public_html/panstock/system/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `cl...', 0)
+#1 /home/app/public_html/panstock/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cl...')
+#2 /home/app/public_html/panstock/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cl...')
+#3 /home/app/public_html/panstock/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cl...', Array, false)
+#4 /home/app/public_html/panstock/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/app/public_html/panstock/system/BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 /home/app/public_html/panstock/system/Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 /home/app/public_html/panstock/app/Controllers/Clientes.php(129): CodeIgniter\Model->insert(Array)
+#8 /home/app/public_html/panstock/system/CodeIgniter.php(934): App\Controllers\Clientes->create()
+#9 /home/app/public_html/panstock/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+#10 /home/app/public_html/panstock/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/app/public_html/panstock/index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-09 21:23:22 --> Duplicate entry 'marco@example.com' for key 'cl_email'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `clientes` (`cl_nombre`, `cl_apellido`, `cl_documento`, `td_id`, `cl_telefono`, `cl_email`) VALUES (\'Marco\', \'Guevara\', \'45678912\', \'7\', \'741963085\', \'marco@example.com\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `clientes` (`cl_nombre`, `cl_apellido`, `cl_documento`, `td_id`, `cl_telefono`, `cl_email`) VALUES (\'Marco\', \'Guevara\', \'45678912\', \'7\', \'741963085\', \'marco@example.com\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `clientes` (`cl_nombre`, `cl_apellido`, `cl_documento`, `td_id`, `cl_telefono`, `cl_email`) VALUES (\'Marco\', \'Guevara\', \'45678912\', \'7\', \'741963085\', \'marco@example.com\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `clientes` (`cl_nombre`, `cl_apellido`, `cl_documento`, `td_id`, `cl_telefono`, `cl_email`) VALUES (:cl_nombre:, :cl_apellido:, :cl_documento:, :td_id:, :cl_telefono:, :cl_email:)', [...], false)
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/Clientes.php(129): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Clientes->create()
+10 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+11 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-09 21:23:38 --> mysqli_sql_exception: Duplicate entry 'marco@example.com' for key 'cl_email' in /home/app/public_html/panstock/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /home/app/public_html/panstock/system/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `cl...', 0)
+#1 /home/app/public_html/panstock/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cl...')
+#2 /home/app/public_html/panstock/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cl...')
+#3 /home/app/public_html/panstock/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cl...', Array, false)
+#4 /home/app/public_html/panstock/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/app/public_html/panstock/system/BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 /home/app/public_html/panstock/system/Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 /home/app/public_html/panstock/app/Controllers/Clientes.php(129): CodeIgniter\Model->insert(Array)
+#8 /home/app/public_html/panstock/system/CodeIgniter.php(934): App\Controllers\Clientes->create()
+#9 /home/app/public_html/panstock/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+#10 /home/app/public_html/panstock/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/app/public_html/panstock/index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-09 21:23:38 --> Duplicate entry 'marco@example.com' for key 'cl_email'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `clientes` (`cl_nombre`, `cl_apellido`, `cl_documento`, `td_id`, `cl_telefono`, `cl_email`) VALUES (\'Marco\', \'Guevara\', \'45678912\', \'7\', \'741963085\', \'marco@example.com\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `clientes` (`cl_nombre`, `cl_apellido`, `cl_documento`, `td_id`, `cl_telefono`, `cl_email`) VALUES (\'Marco\', \'Guevara\', \'45678912\', \'7\', \'741963085\', \'marco@example.com\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `clientes` (`cl_nombre`, `cl_apellido`, `cl_documento`, `td_id`, `cl_telefono`, `cl_email`) VALUES (\'Marco\', \'Guevara\', \'45678912\', \'7\', \'741963085\', \'marco@example.com\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `clientes` (`cl_nombre`, `cl_apellido`, `cl_documento`, `td_id`, `cl_telefono`, `cl_email`) VALUES (:cl_nombre:, :cl_apellido:, :cl_documento:, :td_id:, :cl_telefono:, :cl_email:)', [...], false)
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/Clientes.php(129): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Clientes->create()
+10 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+11 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-06-09 21:24:08 --> mysqli_sql_exception: Duplicate entry 'marco@example.com' for key 'cl_email' in /home/app/public_html/panstock/system/Database/MySQLi/Connection.php:295
+Stack trace:
+#0 /home/app/public_html/panstock/system/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `cl...', 0)
+#1 /home/app/public_html/panstock/system/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `cl...')
+#2 /home/app/public_html/panstock/system/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `cl...')
+#3 /home/app/public_html/panstock/system/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `cl...', Array, false)
+#4 /home/app/public_html/panstock/system/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+#5 /home/app/public_html/panstock/system/BaseModel.php(782): CodeIgniter\Model->doInsert(Array)
+#6 /home/app/public_html/panstock/system/Model.php(730): CodeIgniter\BaseModel->insert(Array, true)
+#7 /home/app/public_html/panstock/app/Controllers/Clientes.php(129): CodeIgniter\Model->insert(Array)
+#8 /home/app/public_html/panstock/system/CodeIgniter.php(934): App\Controllers\Clientes->create()
+#9 /home/app/public_html/panstock/system/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+#10 /home/app/public_html/panstock/system/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/app/public_html/panstock/index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2024-06-09 21:24:08 --> Duplicate entry 'marco@example.com' for key 'cl_email'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 295.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(295): mysqli->query('INSERT INTO `clientes` (`cl_nombre`, `cl_apellido`, `cl_documento`, `td_id`, `cl_telefono`, `cl_email`) VALUES (\'Marco\', \'Guevara\', \'45678912\', \'7\', \'741963085\', \'marco@example.com\')', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(691): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `clientes` (`cl_nombre`, `cl_apellido`, `cl_documento`, `td_id`, `cl_telefono`, `cl_email`) VALUES (\'Marco\', \'Guevara\', \'45678912\', \'7\', \'741963085\', \'marco@example.com\')')
+ 3 SYSTEMPATH/Database/BaseConnection.php(605): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `clientes` (`cl_nombre`, `cl_apellido`, `cl_documento`, `td_id`, `cl_telefono`, `cl_email`) VALUES (\'Marco\', \'Guevara\', \'45678912\', \'7\', \'741963085\', \'marco@example.com\')')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(2309): CodeIgniter\Database\BaseConnection->query('INSERT INTO `clientes` (`cl_nombre`, `cl_apellido`, `cl_documento`, `td_id`, `cl_telefono`, `cl_email`) VALUES (:cl_nombre:, :cl_apellido:, :cl_documento:, :td_id:, :cl_telefono:, :cl_email:)', [...], false)
+ 5 SYSTEMPATH/Model.php(330): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH/BaseModel.php(782): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH/Model.php(730): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH/Controllers/Clientes.php(129): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH/CodeIgniter.php(934): App\Controllers\Clientes->create()
+10 SYSTEMPATH/CodeIgniter.php(499): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Clientes))
+11 SYSTEMPATH/CodeIgniter.php(368): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH/index.php(67): CodeIgniter\CodeIgniter->run()
