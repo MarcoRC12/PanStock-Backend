@@ -98,7 +98,8 @@ class Productopedidos extends Controller{
                         "pe_id" => $request->getVar("pe_id"),
                         "prope_numorden" => $request->getVar("prope_numorden"),
                         "prope_descripcion" => $request->getVar("prope_descripcion"),
-                        "prope_cantidad" => $request->getVar("prope_cantidad")                    
+                        "prope_cantidad" => $request->getVar("prope_cantidad"),
+                        "prope_entregado" => $request->getVar("prope_entregado")
                     );                                       
                     
                     if(!empty($datos)){
@@ -108,6 +109,7 @@ class Productopedidos extends Controller{
                             "prope_numorden" => 'required',
                             "prope_descripcion" => 'required',
                             "prope_cantidad" => 'required',
+                            "prope_entregado" => 'required'
                         ]);                                                
                         
                         $validation->withRequest($this->request)->run();
@@ -122,7 +124,8 @@ class Productopedidos extends Controller{
                                 "pe_id" => $datos["pe_id"],
                                 "prope_numorden" => $datos["prope_numorden"],
                                 "prope_descripcion" => $datos["prope_descripcion"],
-                                "prope_cantidad" => $datos["prope_cantidad"]
+                                "prope_cantidad" => $datos["prope_cantidad"],
+                                "prope_entregado" => $datos["prope_entregado"]
                             );                            
                             
                             
@@ -177,7 +180,8 @@ class Productopedidos extends Controller{
                                 "pe_id" => 'required',
                                 "prope_numorden" => 'required',
                                 "prope_descripcion" => 'required',
-                                "prope_cantidad" => 'required'
+                                "prope_cantidad" => 'required',
+                                "prope_entregado" => 'required'
                             ]);                            
                             
                             
@@ -204,6 +208,7 @@ class Productopedidos extends Controller{
                                         "prope_numorden" => $datos["prope_numorden"],
                                         "prope_descripcion" => $datos["prope_descripcion"],
                                         "prope_cantidad" => $datos["prope_cantidad"],
+                                        "prope_entregado" => $datos["prope_entregado"]
                                     );                                    
                                     
                                     $model = new ProductoPedidosModel();

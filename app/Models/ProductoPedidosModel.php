@@ -6,7 +6,7 @@ class ProductoPedidosModel extends Model{
     protected $primaryKey = 'prope_id';
     protected $returnType = 'array';
     protected $allowedFields = [
-        'pro_id','pe_id ', 'prope_numorden', 'prope_descripcion', 'prope_cantidad', 'prope_entregado', 'prope_estado'
+        'pro_id','pe_id ', 'prope_numorden', 'prope_descripcion', 'prope_cantidad', 'prope_estado'
     ];
 
     public function getProductoPedidos(){
