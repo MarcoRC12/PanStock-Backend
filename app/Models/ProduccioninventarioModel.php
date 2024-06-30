@@ -13,7 +13,7 @@ class ProduccionInventarioModel extends Model{
     public function getProduInven(){
         return $this->db->table('produccion_inventario produinv')
         ->where('produinv.produinv_estado',1)
-        ->join('inventario inv','inv.inv_id = produinv.tido_id')
+        ->join('inventario inv','inv.inv_id = produinv.inv_id')
         ->join('produccion produ','produ.produ_id = produinv.produ_id')
         ->get()->getResultArray();
     }
@@ -21,7 +21,7 @@ class ProduccionInventarioModel extends Model{
         return $this->db->table('produccion_inventario produinv')
         ->where('produinv.produinv_id',$id)
         ->where('produinv.produinv_estado',1)
-        ->join('inventario inv','inv.inv_id = produinv.tido_id')
+        ->join('inventario inv','inv.inv_id = produinv.inv_id')
         ->join('produccion produ','produ.produ_id = produinv.produ_id')
         ->get()->getResultArray();
     }

@@ -20,7 +20,7 @@ class ProduccionModel extends Model{
         return $this->db->table('produccion produ')
         ->where('produ.produ_id',$id)
         ->where('produ.produ_estado',1)
-        ->join('productos pro_id','tido.pro_id = produ.pro_id')
+        ->join('productos pro','pro.pro_id = produ.pro_id')
         ->get()->getResultArray();
     }
     
