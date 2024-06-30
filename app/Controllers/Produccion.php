@@ -124,8 +124,8 @@ class Produccion extends Controller{
                                 "produ_horainicio" => $datos["produ_horainicio"],
                                 "produ_horafin" => $datos["produ_horafin"],
                                 "produ_fecha" => $datos["produ_fecha"],
-                                "produ_terminado" => $datos["produ_fecha"],
-                                "produ_cantidadproducida" => $datos["produ_fecha"]
+                                "produ_terminado" => $datos["produ_terminado"],
+                                "produ_cantidadproducida" => $datos["produ_cantidadproducida"]
                             );                                                        
                             
                             $model = new ProduccionModel();
@@ -206,8 +206,8 @@ class Produccion extends Controller{
                                         "produ_horainicio" => $datos["produ_horainicio"],
                                         "produ_horafin" => $datos["produ_horafin"],
                                         "produ_fecha" => $datos["produ_fecha"],
-                                        "produ_terminado" => $datos["produ_fecha"],
-                                        "produ_cantidadproducida" => $datos["produ_fecha"]
+                                        "produ_terminado" => $datos["produ_terminado"],
+                                        "produ_cantidadproducida" => $datos["produ_cantidadproducida"]
                                     ); 
                                     
                                     
