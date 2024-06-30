@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 use CodeIgniter\Controller;
-use App\Models\InventarioModel;
+use App\Models\ProduccionModel;
 use App\Models\UsuariosModel;
 
 class Produccion extends Controller{
@@ -14,13 +14,13 @@ class Produccion extends Controller{
         foreach($usuarios as $key=>$value){
             if(array_key_exists('Authorization',$headers) && !empty($headers['Authorization'])){
                 if($request->getHeader('Authorization')=='Authorization: Basic '.base64_encode($value['token_usuario'].':'.$value['token_contrasena'])){
-                    $model = new InventarioModel();
-                    $Pedidos = $model->getInventario();
-                    if(!empty($Pedidos)){
+                    $model = new ProduccionModel();
+                    $Produccion = $model->getProduccion();
+                    if(!empty($Produccion)){
                         $data = array(
                             "Status"=>200,
-                            "Total de registros"=>count($Pedidos), 
-                            "Detalle"=>$Pedidos);
+                            "Total de registros"=>count($Produccion), 
+                            "Detalle"=>$Produccion);
                     }
                     else{
                         $data = array(
@@ -55,11 +55,11 @@ class Produccion extends Controller{
         foreach($Usuario as $key=>$value){
             if(array_key_exists('Authorization',$headers) && !empty($headers['Authorization'])){
                 if($request->getHeader('Authorization')=='Authorization: Basic '.base64_encode($value['token_usuario'].':'.$value['token_contrasena'])){
-                    $model = new InventarioModel();
-                    $Pedidos = $model->getId($id);
-                    if(!empty($Pedidos)){
+                    $model = new ProduccionModel();
+                    $Produccion = $model->getId($id);
+                    if(!empty($Produccion)){
                         $data = array(  
-                            "Status"=>200, "Detalle"=>$Pedidos);
+                            "Status"=>200, "Detalle"=>$Produccion);
                     }
                     else{
                         $data = array(
@@ -95,17 +95,21 @@ class Produccion extends Controller{
                 if($request->getHeader('Authorization')=='Authorization: Basic '.base64_encode($value['token_usuario'].':'.$value['token_contrasena'])){
                     $datos = array(
                         "pro_id" => $request->getVar("pro_id"),
-                        "inv_cantidad_total" => $request->getVar("inv_cantidad_total"),
-                        "inv_cantidad_disponible" => $request->getVar("inv_cantidad_disponible"),
-                        "inv_fecha_adquisicion" => $request->getVar("inv_fecha_adquisicion")
+                        "produ_horainicio" => $request->getVar("produ_horainicio"),
+                        "produ_horafin" => $request->getVar("produ_horafin"),
+                        "produ_fecha" => $request->getVar("produ_fecha"),
+                        "produ_terminado" => $request->getVar("produ_terminado"),
+                        "produ_cantidadproducida" => $request->getVar("produ_cantidadproducida"),
                     );                    
                     
                     if(!empty($datos)){
                         $validation->setRules([
                             "pro_id" => 'required',
-                            "inv_cantidad_total" => 'required',
-                            "inv_cantidad_disponible" => 'required',
-                            "inv_fecha_adquisicion" => 'required'
+                            "produ_horainicio" => 'required',
+                            "produ_horafin" => 'required',
+                            "produ_fecha" => 'required',
+                            "produ_terminado" => 'required',
+                            "produ_cantidadproducida" => 'required'
                         ]);                        
                         
                         $validation->withRequest($this->request)->run();
@@ -117,13 +121,15 @@ class Produccion extends Controller{
                         else{
                             $datos = array(
                                 "pro_id" => $datos["pro_id"],
-                                "inv_cantidad_total" => $datos["inv_cantidad_total"],
-                                "inv_cantidad_disponible" => $datos["inv_cantidad_disponible"],
-                                "inv_fecha_adquisicion" => $datos["inv_fecha_adquisicion"]
+                                "produ_horainicio" => $datos["produ_horainicio"],
+                                "produ_horafin" => $datos["produ_horafin"],
+                                "produ_fecha" => $datos["produ_fecha"],
+                                "produ_terminado" => $datos["produ_fecha"],
+                                "produ_cantidadproducida" => $datos["produ_fecha"]
                             );                                                        
                             
-                            $model = new InventarioModel();
-                            $Pedidos = $model->insert($datos);
+                            $model = new ProduccionModel();
+                            $Produccion = $model->insert($datos);
                             $data = array(
                                 "Status"=>200,
                                 "Detalle"=>"Registro existoso"
@@ -170,10 +176,12 @@ class Produccion extends Controller{
                         if(!empty($datos)){
                             $validation->setRules([
                                 "pro_id" => 'required',
-                                "inv_cantidad_total" => 'required',
-                                "inv_cantidad_disponible" => 'required',
-                                "inv_fecha_adquisicion" => 'required'
-                            ]);
+                                "produ_horainicio" => 'required',
+                                "produ_horafin" => 'required',
+                                "produ_fecha" => 'required',
+                                "produ_terminado" => 'required',
+                                "produ_cantidadproducida" => 'required'
+                            ]);  
                             
                             
                             $validation->withRequest($this->request)->run();
@@ -183,9 +191,9 @@ class Produccion extends Controller{
                                 return json_encode($data, true);
                             }
                             else{
-                                $model = new InventarioModel();
-                                $Pedidos = $model->find($id);
-                                if(is_null($Pedidos)){
+                                $model = new ProduccionModel();
+                                $Produccion = $model->find($id);
+                                if(is_null($Produccion)){
                                     $data = array(
                                         "Status"=>404,
                                         "Detalles"=>"Registro no existe"
@@ -195,14 +203,16 @@ class Produccion extends Controller{
                                 else{
                                     $datos = array(
                                         "pro_id" => $datos["pro_id"],
-                                        "inv_cantidad_total" => $datos["inv_cantidad_total"],
-                                        "inv_cantidad_disponible" => $datos["inv_cantidad_disponible"],
-                                        "inv_fecha_adquisicion" => $datos["inv_fecha_adquisicion"]
-                                    );
+                                        "produ_horainicio" => $datos["produ_horainicio"],
+                                        "produ_horafin" => $datos["produ_horafin"],
+                                        "produ_fecha" => $datos["produ_fecha"],
+                                        "produ_terminado" => $datos["produ_fecha"],
+                                        "produ_cantidadproducida" => $datos["produ_fecha"]
+                                    ); 
                                     
                                     
-                                    $model = new InventarioModel();
-                                    $Pedidos = $model->update($id, $datos);
+                                    $model = new ProduccionModel();
+                                    $Produccion = $model->update($id, $datos);
                                     $data = array(
                                         "Status"=>200,
                                         "Detalles"=>"Datos actualizados"
@@ -244,11 +254,11 @@ class Produccion extends Controller{
         foreach($Usuario as $key=>$value){
             if(array_key_exists('Authorization',$headers) && !empty($headers['Authorization'])){
                 if($request->getHeader('Authorization')=='Authorization: Basic '.base64_encode($value['token_usuario'].':'.$value['token_contrasena'])){
-                    $model = new InventarioModel();
-                    $Pedidos = $model->where('inv_estado',1)->find($id);
-                    if(!empty($Pedidos)){
-                        $datos = array('inv_estado'=>0);
-                        $Pedidos = $model->update($id, $datos);
+                    $model = new ProduccionModel();
+                    $Produccion = $model->where('produ_estado',1)->find($id);
+                    if(!empty($Produccion)){
+                        $datos = array('produ_estado'=>0);
+                        $Produccion = $model->update($id, $datos);
                         $data = array(
                             "Status"=>200,
                             "Detalle"=>"Se ha eliminado el registro"

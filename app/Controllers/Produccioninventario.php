@@ -240,7 +240,7 @@ class Produccioninventario extends Controller
                     $model = new ProduccionInventarioModel();
                     $ProduInv = $model->where('produinv_estado', 1)->find($id);
                     if (!empty($ProduInv)) {
-                        $datos = array('prope_estado' => 0);
+                        $datos = array('produinv_estado' => 0);
                         $ProduInv = $model->update($id, $datos);
                         $data = array(
                             "Status" => 200,
